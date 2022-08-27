@@ -52,6 +52,8 @@ public class scrapowide
         });
         return l;
     }
+    
+    //WikiSearch
     public static String searchWiki(String arg) throws IOException
     {
         arg = arg.trim().replace(" ", "_");
@@ -70,6 +72,8 @@ public class scrapowide
         }
         return p.text();
     }
+    
+    //Accessing weather info using weather api
     public static String[] getWeather(String q) throws IOException, InterruptedException
     {
         q = q.replace("_", " ");
@@ -80,6 +84,8 @@ public class scrapowide
         String info = response.body();
         return jParse(info);
     }
+    
+    //Accessing json file
     public static String[] jParse(String i) throws IOException
     {
         JSONObject obj1 = new JSONObject(i);
@@ -99,6 +105,8 @@ public class scrapowide
         String full[] = new String[]{"Name - " + name + "<br>Region - " + region + "<br>Condition - " + text + "<br>Temperature - " + temp + "<br>Wind - " + w + "<br>Precipitation - " + p, country};
         return full;
     }
+    
+    //GUI
     public static void main(String[] args) throws Exception
     {
         Scanner sc = new Scanner(System.in);
